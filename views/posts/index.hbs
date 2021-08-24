@@ -1,0 +1,44 @@
+<h1>Posts</h1>
+{{!-- <div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each posts}}
+        <div col class="col">
+            <div class="card border-danger mb-3" style="max-width: 18rem;">
+                <div class="card-image">
+                    {{! --- todo : editIcon}}
+                </div>
+            </div>
+            <div class="card-body center-align">
+                <h5>{{title}}</h5>
+                <p>{{body}}</p>
+                <br>
+                <div class="chip">
+                    <a href="/posts/user/{{user.id}}">{{user.username}}</a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+
+    {{/each}}
+</div> --}}
+<div class="row row-cols-1 row-cols-md-3 g-4 ">
+     {{#each posts}}
+    <div class="card border-primary mb-3" style="max-width: 18rem; margin:10px 10px;">
+        <div class="card-image">
+            {{{editIcon user ../user _id }}}
+        </div>
+     <div class="card-header">{{title}}</div>
+        <div class="card-body ">
+            <h5 class="card-title center-align"> <a href="/posts/user/{{user._id}}">{{user.username}}</a></h5>
+            <hr>
+           <p class="card-text center-align">{{truncate (stripTags body )900}}</p>
+           <div class="card-action center-align">
+               <a href="/posts/{{_id}}" class="btn btn-primary">Read More</a>
+           </div>
+        </div>
+    </div>
+   {{else}}
+
+    {{/each}}
+  </div>
+  
+

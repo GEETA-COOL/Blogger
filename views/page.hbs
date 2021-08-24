@@ -1,0 +1,37 @@
+
+{{!-- <h3><i class="fas fa-blog"></i> Blogger </h3>
+<div class="section">
+    <p class="lead">Create Public and Private Posts from your life!</p>
+</div>
+<div class="divider"></div> --}}
+<h1 class="center-align">Registration</h1>
+<div class="container card" >
+    {{#if error}}
+  <h3><strong>{{error}}</strong></h3> 
+      {{/if}}
+    <form action="/register" method="POST" ">
+        {{!-- <input type="hidden" name="_csrf" value="<%= csrfToken %>"> --}}
+            <div class="mb-3">
+                <label for="email">Enter Your Email</label>
+                 <input type="email" class="form-control form-control-lg" name="email" id="email" autocomplete="off" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <label for="username">Choose A Username</label>
+                <input type="text" class="form-control form-control-lg" name="username" id="username"  autocomplete="off" placeholder="Username">
+             </div>
+            <div class="mb-3">
+                <label for="password">Choose A Password</label>
+                <input type="password" class="form-control form-control-lg" name="password" id="password" autocomplete="off" placeholder="Password">
+            </div>
+            <div class="mb-3">
+                <label for="confirmpassword">Confirm Your Password</label>
+                 <input type="password" class="form-control form-control-lg" name="confirmpassword" id="confirmpassword" autocomplete="off" placeholder="Confirm Password">
+            </div>
+            <div class="d-grid gap-3 mb-3">
+                <input type="submit" class="btn btn-lg btn-outline-primary" value="Register">
+                {{!-- <a class="btn btn-lg btn-success" href="">Continue With Google</a> --}}
+            </div>
+             <p>Already Registered ? <a class="card-link" href="/auth/login">LOGIN Here</a> </p>
+    </form>
+</div>
+
